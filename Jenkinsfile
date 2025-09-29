@@ -7,7 +7,7 @@ pipeline {
     }
     
     parameters {
-        string(name: 'DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
+        string(name: 'DOCKER_TAG', defaultValue: 'latest', description: 'Setting docker image for latest push')
     }
     
     stages {
@@ -67,7 +67,7 @@ pipeline {
                 }
             }
         }
-        
+    
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
