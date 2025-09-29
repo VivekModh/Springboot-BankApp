@@ -63,7 +63,7 @@ pipeline {
         stage("Docker: Build Images"){
             steps{
                 script{
-                    docker_build("bankapp","${params.DOCKER_TAG}","madhupdevops")
+                    docker_build("bankapp","${params.DOCKER_TAG}","vivek2good")
                 }
             }
         }
@@ -71,7 +71,7 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("bankapp","${params.DOCKER_TAG}","madhupdevops")
+                    docker_push("bankapp","${params.DOCKER_TAG}","vivek2good")
                 }
             }
         }
