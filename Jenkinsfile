@@ -76,14 +76,12 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            steps {
-                archiveArtifacts artifacts: '*.xml', followSymlinks: false
-                build job: "BankApp-CD", parameters: [
-                    string(name: 'DOCKER_TAG', value: "${params.DOCKER_TAG}")
-                ]
-            }
+    post{
+        success{
+            archiveArtifacts artifacts: '*.xml', followSymlinks: false
+            build job: "BankApp-CD", parameters: [
+                string(name: 'DOCKER_TAG', value: "${params.DOCKER_TAG}")
+            ]
         }
     }
 }
